@@ -1,0 +1,16 @@
+{
+    "name": "inoforest/var",
+    "description": "Inoforest var is wordpress plugin to use var Dumper in Synfony",
+    "license": "GPLv2+",
+    "authors": [
+        {
+            "name": "Hla Por Thein",
+            "email": "hlaporthein@gmail.com"
+        }
+    ],
+    "require": {},
+    "require-dev": {
+        "symfony/var-dumper": "^5.0"
+
+    }
+}
