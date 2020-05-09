@@ -11,17 +11,45 @@
  */
 
 
-if ( file_exists( plugin_dir_path(__FILE__) . 'vendor/autoload.php' ) ) {
 
-    require plugin_dir_path(__FILE__) . 'vendor/autoload.php';
+if ( file_exists( plugin_dir_path(__FILE__) . 'sources/autoload.php' ) ) {
+
+    require plugin_dir_path(__FILE__) . 'sources/autoload.php';
 
 } else {
 
-    /**
-     * Show message to install composer
-     */
-    add_action('wp_footer', function(){
-        echo fnm_show_message("Need to install composer in inoforest var plugin.");
-    });
+    if ( file_exists( plugin_dir_path(__FILE__) . 'vendor/autoload.php' ) ) {
+
+        require plugin_dir_path(__FILE__) . 'vendor/autoload.php';
+
+    } else {
+
+        /**
+         * Show message to install composer
+         */
+        add_action('wp_footer', function(){
+            echo "Need to install composer in inoforest var plugin.";
+        });
+
+    }
 
 }
+
+/**
+ * Activate require functions when activated plugins
+ */
+function ino_la_plugin_activate() {
+
+//    set_transient( 'ino-fic-activate-plugin', true, 5 );
+}
+
+register_activation_hook( __FILE__, 'ino_la_plugin_activate' );
+
+/**
+ * Activate require functions when deactivated plugins
+ */
+function ino_la_plugin_deactivate() {
+
+}
+
+register_deactivation_hook( __FILE__, 'ino_la_plugin_deactivate' );
