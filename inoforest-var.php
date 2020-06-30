@@ -1,7 +1,7 @@
 <?php if ( ! defined( 'ABSPATH' ) ) { die( 'Forbidden' ); }
 /**
- * Plugin Name: Var dumper
- * Plugin URI: http://hlaporthein.me
+ * Plugin Name: Inoforest Var
+ * Plugin URI: https://github.com/hlaporthein/inoforest-var
  * Description: Inoforest WordPress Nonce Var Dumper in Synfony
  * Version: 1.0
  * Author: Hla Por Thein
